@@ -66,6 +66,8 @@ jobs:
   deploy:
     needs: build
     uses: ./.github/workflows/resuse.yml
+    with:
+        artifact-name: test.json
   report:
     needs: [lint,deploy]
     if: failure()
