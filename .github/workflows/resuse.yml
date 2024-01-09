@@ -1,8 +1,18 @@
 name: Resuable deploy
-on: workflow_call
+on:
+  workflow_call:
+    inputs:
+      artifact-name:
+        description: The name
+        type: string
+        required: false
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/uploar-artifact@v4
+        with: 
+          name: ${{ inputs.artifact-name }}
       - name: Output Information
         run: echo "Deploying"
