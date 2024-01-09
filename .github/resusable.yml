@@ -1,0 +1,8 @@
+name: Resuable deploy
+on:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ouyput Information
+        echo: echo "Deploying"
